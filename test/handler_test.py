@@ -30,11 +30,4 @@ def test_when_server_full_then_new_server_is_created(handler):
     handler.handle_tick(4)
     assert len(handler.servers) == 4
     handler.handle_tick(2)
-    assert len(handler.servers) == 5
-
-def test_when_user_allocated_then_task_is_started(handler):
-    assert handler.
-
-
-
-    
+    assert len(handler.servers) == 5    
