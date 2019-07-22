@@ -58,13 +58,14 @@ class Handler():
                 server.connect_user(user)
                 self.allocations.append({'server': server.id, 'user': user.id, 'ticks': 0})            
         
+        log = ','.join([str(len(s.users)) for s in self.servers])
         self._process()
         self.completed = (len(self.servers) == 0 and new_users == None)
+        return log
 
     def _process(self):
         servers = copy.copy(self.servers)
         self.total_cost += (self.server_cost * len(self.servers))
-        print(','.join([str(len(s.users)) for s in self.servers]))
         for server in servers:
                
             server.process()
