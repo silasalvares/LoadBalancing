@@ -13,11 +13,8 @@ class Server():
         self.id = generate_id()
         self.users = []
         
-    def is_full(self):
-        return len(self.users) >= self.umax
-
-    def run_task(self):
-        pass
+    '''def is_full(self):
+        return len(self.users) >= self.umax'''
         
 
 class Handler():
