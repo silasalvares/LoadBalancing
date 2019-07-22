@@ -33,4 +33,12 @@ def test_when_process_reaches_ttask_then_user_is_disconnected(server):
         server.process()
     assert user not in server.users 
 
-    
+def test_when_user_removed_then_user_list_is_updated(server):
+    server.connect_user(User())
+    user_list_size = len(server.users)
+    assert user_list_size > 0
+    user = server.remove_user()
+    assert len(server.users) < user_list_size
+    assert user not in server.users
+
+     
